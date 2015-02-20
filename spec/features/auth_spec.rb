@@ -16,4 +16,17 @@ feature 'Auth' do
     expect(page).to have_content("user@example.com")
   end
 
+ scenario 'Users can register' do
+   visit root_path
+   click_on "Register"
+   fill_in "Name", with: "Ryan"
+   fill_in "Email", with: "ryan@email.com"
+   fill_in "Password", with: '12345'
+   fill_in "Confirm", with: '12345'
+   click_button "Register"
+   expect(page).to have_content("ryan@email.com")
+ end
+
+
+
 end
