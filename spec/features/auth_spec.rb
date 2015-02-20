@@ -16,4 +16,11 @@ feature 'Auth' do
     expect(page).to have_content("user@example.com")
   end
 
+
+  scenario "Users can register" do
+    visit root_path
+    within(" .registation-form") { click_on "Register" }
+    save_and_open_page
+    expect(page). to redirect_to(users_path)
+  end
 end
