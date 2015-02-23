@@ -22,7 +22,7 @@ feature 'Auth to Logged In' do
 
     expect(page).to have_content("You are logged in successfully.")
 
-    expect(page).to have_content("Welcome user")
+    expect(page).to have_content("Welcome")
 
   end
 
