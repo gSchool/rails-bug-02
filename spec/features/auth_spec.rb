@@ -28,7 +28,7 @@ feature 'Auth' do
    fill_in "Confirm", with: "password"
 
    within('.registration-form') { click_on "Register"}
-   expect(current_path).to eql(root_path)
+   expect(current_path).to eql(registrations_path)
  end
 
 end
