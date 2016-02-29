@@ -16,4 +16,15 @@ feature 'Auth' do
     expect(page).to have_content("user@example.com")
   end
 
+  scenario 'Users can register and be automatically logged in' do
+    visit root_path
+    click_on "Register"
+    fill_in "Name", with: "Gollum"
+    fill_in "Email", with: "precious@ring.com"
+    fill_in "Password", with: "password"
+    fill_in "Confirm", with: "password"
+    within(".registration-form") { click_on "Register" }
+    expect(page).to have_content("precious@ring.com")
+  end
+
 end
